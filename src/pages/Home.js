@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.jpg";
 import Button from "react-bootstrap/Button";
 // import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";

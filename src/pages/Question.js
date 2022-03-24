@@ -20,7 +20,7 @@ const Question = () => {
 
     // setSelectedData(QuestionData[no + 1]);
     setQuestionNo(no + 1);
-    // setScore(QuestionData[questionNo].score);
+    setScore(QuestionData[questionNo].type);
     // setScore(
     //   score.map((data) => {
     //     if (data.id === QuestionData[questionNo].type) {
