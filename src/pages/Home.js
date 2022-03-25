@@ -29,7 +29,6 @@ const Home = () => {
           </LogoImage>
           <Desc>MBTI를 기반으로 하는 나랑 잘맞는 고양이 찾기!</Desc>
           <Desc>내가 고양이를 키운다면...?</Desc>
-
           {/* <LogoImage src={logo} /> */}
           <Button
             onClick={handleClickButton}

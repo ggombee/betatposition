@@ -59,32 +59,39 @@ const Question = () => {
         animated
         now={(questionNo / QuestionData.length) * 100}
         style={{
-          width: "70%",
+          width: "80%",
           marginTop: 20,
         }}
       />
-      <Title>
-        {/* {questionNo > 0 ? selectedData.title : QuestionData[0].title} */}
-        {QuestionData[questionNo].title}
-      </Title>
-      <Wrapper>
-        <Button
-          variant="warning"
-          onClick={() => handleCLickAnswerA(questionNo)}
-        >
-          {QuestionData[questionNo].answera}
-          {/* {questionNo > 0 ? selectedData.answera : QuestionData[0].answera} */}
-        </Button>
-        <Button
-          variant="warning"
-          style={{ marginLeft: "20px" }}
-          onClick={handleCLickAnswerB}
-        >
-          {QuestionData[questionNo].answerb}
-
-          {/* {questionNo > 0 ? selectedData.answerb : QuestionData[0].answerb} */}
-        </Button>
-      </Wrapper>
+      <Contents>
+        <Title>
+          {/* {questionNo > 0 ? selectedData.title : QuestionData[0].title} */}
+          {QuestionData[questionNo].title}
+        </Title>
+        <ButtonGroup>
+          <Button
+            variant="warning"
+            onClick={() => handleCLickAnswerA(questionNo)}
+            style={{ width: "40%", minHeight: "200px", fontSize: "15pt" }}
+          >
+            {QuestionData[questionNo].answera}
+            {/* {questionNo > 0 ? selectedData.answera : QuestionData[0].answera} */}
+          </Button>
+          <Button
+            variant="warning"
+            onClick={handleCLickAnswerB}
+            style={{
+              width: "40%",
+              marginLeft: "20px",
+              minHeight: "200px",
+              fontSize: "15pt",
+            }}
+          >
+            {QuestionData[questionNo].answerb}
+            {/* {questionNo > 0 ? selectedData.answerb : QuestionData[0].answerb} */}
+          </Button>
+        </ButtonGroup>
+      </Contents>
     </Container>
   );
 };
@@ -100,16 +107,31 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const Contents = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+`;
+
 const Title = styled.text`
+  width: 90%;
+  text-align: center;
   color: white;
-  font-size: 40pt;
+  font-size: 30pt;
   font-family: "SimKyungha";
   font-weight: 550;
   margin-top: 20px;
 `;
 
-const Wrapper = styled.div`
+const ButtonGroup = styled.div`
+  font-family: "SimKyungha";
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
