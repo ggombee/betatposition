@@ -94,7 +94,7 @@ const Question = () => {
       </Contents>
       <ins
         class="kakao_ad_area"
-        style="display: none"
+        style={{ display: "none" }}
         data-ad-unit="DAN-u2JDmzz9RNn61qmk"
         data-ad-width="320"
         data-ad-height="100"
