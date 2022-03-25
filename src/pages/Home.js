@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Header>😼 집사 전용 판별기 😼</Header>
+        <Header>😼 예비집사 판별기 😼</Header>
         <Wrapper>
           <Title>나에게 맞는 주인님은?!</Title>
           <LogoImage>
