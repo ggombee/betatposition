@@ -14,7 +14,7 @@ const Result = () => {
   return (
     <>
       <Container>
-        <Header>😼 집사 전용 판별기 😼</Header>
+        <Header>😼 예비집사 판별기 😼</Header>
         <Wrapper>
           <Title>결과 보기</Title>
           <LogoImage>
