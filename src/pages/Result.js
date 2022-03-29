@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 // import { Button } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import PangImage from "../assets/ggompang.jpg";
+import queryString from "query-string";
 
 const Result = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const mbti = queryString.parse(location.search).mbti;
 
   return (
     <>
@@ -28,7 +31,7 @@ const Result = () => {
               fontSize: "18pt",
             }}
           >
-            나에게 맞는 고양이는 아비시니안 입니다.
+            나에게 맞는 고양이는 {mbti} 아비시니안 입니다.
           </Desc>
           <Desc
             style={{
@@ -41,7 +44,7 @@ const Result = () => {
             많답니다.애교는 정말 많답니다.애교는 정말 많답니다.
           </Desc>
           <ShareButtonGroup>
-            <div class="addthis_inline_share_toolbox"></div>
+            <div className="addthis_inline_share_toolbox"></div>
           </ShareButtonGroup>
           <Button
             onClick={() => navigate("/")}

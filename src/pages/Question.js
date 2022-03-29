@@ -7,50 +7,83 @@ import { useNavigate } from "react-router-dom";
 const Question = () => {
   // const [selectedData, setSelectedData] = React.useState({});
   const [questionNo, setQuestionNo] = React.useState(0);
-  const [score, setScore] = React.useState(
+  const navigate = useNavigate();
+
+  const [totalScore, setTotalScore] = React.useState([
     { id: "EI", score: 0 },
     { id: "SN", score: 0 },
     { id: "TF", score: 0 },
-    { id: "JP", score: 0 }
-  );
-  const navigate = useNavigate();
+    { id: "JP", score: 0 },
+  ]);
 
-  const handleCLickAnswerA = (no) => {
-    console.log("zzzzzz", no);
+  const handleCLickAnswer = (add, type) => {
+    const newScore = totalScore.map((s) =>
+      s.id === type ? { id: s.id, score: s.score + 1 } : s
+    );
+    console.log("questionNo", questionNo);
+    setTotalScore(newScore);
+    if (QuestionData.length !== questionNo + 1) {
+      setQuestionNo(questionNo + 1);
+    } else {
+      const mbti = newScore.reduce(
+        (acc, curr) =>
+          acc +
+          (curr.score > 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
+        ""
+      );
 
-    // setSelectedData(QuestionData[no + 1]);
-    setQuestionNo(no + 1);
-    setScore(QuestionData[questionNo].type);
-    // setScore(
-    //   score.map((data) => {
-    //     if (data.id === QuestionData[questionNo].type) {
-    //       data[score] = data[score] + 1;
-    //       return data
-    //     } else {
-    //       return data
-    //     }
-    //   })
-    // );
+      console.log("newScore", newScore);
+      console.log("mbti", mbti);
 
-    // if (no === 0) {
-    //   setScore(QuestionData[0].score);
+      navigate(`/result?mbti=${mbti}`);
+    }
+
+    // if (type === "EI") {
+    //   // 기존 스코어에 더한 객체 배열 대체
+    //   const addScore = score[0].score + add;
+    //   // 새로운 객체
+    //   const object = { id: "EI", score: addScore };
+    //   // splice 통해 새로운 객체로 해당 객체 변경
+    //   score.splice(0, 1, object);
+    // } else if (type === "SN") {
+    //   const addScore = score[1].score + add;
+    //   const object = { id: "SN", score: addScore };
+    //   score.splice(1, 1, object);
+    // } else if (type === "TF") {
+    //   const addScore = score[2].score + add;
+    //   const object = { id: "TF", score: addScore };
+    //   score.splice(2, 1, object);
     // } else {
-    //   setScore(score + selectedData.score);
+    //   const addScore = score[3].score + add;
+    //   const object = { id: "JP", score: addScore };
+    //   score.splice(3, 1, object);
     // }
 
-    if (QuestionData.length === no + 1) {
-      navigate("/result");
-    }
+    // if (QuestionData.length === questionNo + 1) {
+    //   navigate("/result");
+    // } else {
+    // }
   };
 
-  const handleCLickAnswerB = (no) => {
-    // setSelectedData(QuestionData[no + 1]);
-    setQuestionNo(no + 1);
-  };
+  // React.useEffect(() => {
+  //   questionNo === 12 && navigate("/result");
+  // }, [questionNo]);
 
-  console.log("quesionno", questionNo);
-  // console.log("selectedData", selectedData);
-  console.log("score", score);
+  // const handleCLickAnswerA = (no) => {
+  //   console.log("zzzzzz", no);
+
+  //   // setSelectedData(QuestionData[no + 1]);
+  //   setQuestionNo(no + 1);
+
+  //   if (QuestionData.length === no + 1) {
+  //     navigate("/result");
+  //   }
+  // };
+
+  // const handleCLickAnswerB = (no) => {
+  //   // setSelectedData(QuestionData[no + 1]);
+  //   setQuestionNo(no + 1);
+  // };
 
   return (
     <Container>
@@ -71,7 +104,7 @@ const Question = () => {
         <ButtonGroup>
           <Button
             variant="warning"
-            onClick={() => handleCLickAnswerA(questionNo)}
+            onClick={() => handleCLickAnswer(1, QuestionData[questionNo].type)}
             style={{ width: "40%", minHeight: "200px", fontSize: "15pt" }}
           >
             {QuestionData[questionNo].answera}
@@ -79,7 +112,7 @@ const Question = () => {
           </Button>
           <Button
             variant="warning"
-            onClick={handleCLickAnswerB}
+            onClick={() => handleCLickAnswer(0, QuestionData[questionNo].type)}
             style={{
               width: "40%",
               marginLeft: "20px",
