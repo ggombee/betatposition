@@ -11,6 +11,10 @@ const Result = () => {
   const location = useLocation();
   const mbti = queryString.parse(location.search).mbti;
 
+  React.useEffect(() => {
+    // window.location.reload();
+  }, [mbti]);
+
   return (
     <>
       <Container>
@@ -44,7 +48,7 @@ const Result = () => {
             많답니다.애교는 정말 많답니다.애교는 정말 많답니다.
           </Desc>
           <ShareButtonGroup>
-            <div className="addthis_inline_share_toolbox"></div>
+            <div className="addthis_inline_share_toolbox" />
           </ShareButtonGroup>
           <Button
             onClick={() => navigate("/")}
