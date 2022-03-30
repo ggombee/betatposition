@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ProgressBar, Button } from "react-bootstrap";
-import { QuestionData } from "../assets/data/mockdata";
+import { QuestionData } from "../assets/data/questiondata";
 import { useNavigate } from "react-router-dom";
 
 const Question = () => {
@@ -18,9 +18,8 @@ const Question = () => {
 
   const handleCLickAnswer = (add, type) => {
     const newScore = totalScore.map((s) =>
-      s.id === type ? { id: s.id, score: s.score + 1 } : s
+      s.id === type ? { id: s.id, score: s.score + add } : s
     );
-    console.log("questionNo", questionNo);
     setTotalScore(newScore);
     if (QuestionData.length !== questionNo + 1) {
       setQuestionNo(questionNo + 1);
@@ -28,13 +27,9 @@ const Question = () => {
       const mbti = newScore.reduce(
         (acc, curr) =>
           acc +
-          (curr.score > 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
+          (curr.score >= 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
         ""
       );
-
-      console.log("newScore", newScore);
-      console.log("mbti", mbti);
-
       navigate(`/result?mbti=${mbti}`);
     }
 
@@ -125,7 +120,7 @@ const Question = () => {
           </Button>
         </ButtonGroup>
       </Contents>
-      <ins
+      {/* <ins
         class="kakao_ad_area"
         style={{ display: "none" }}
         data-ad-unit="DAN-u2JDmzz9RNn61qmk"
@@ -136,7 +131,7 @@ const Question = () => {
         type="text/javascript"
         src="//t1.daumcdn.net/kas/static/ba.min.js"
         async
-      ></script>
+      ></script> */}
     </Container>
   );
 };
@@ -161,7 +156,7 @@ const Contents = styled.div`
   width: 100%;
 `;
 
-const Title = styled.text`
+const Title = styled.div`
   width: 90%;
   text-align: center;
   color: white;
