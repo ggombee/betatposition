@@ -5,11 +5,20 @@ import Button from "react-bootstrap/Button";
 import { useNavigate, useLocation } from "react-router-dom";
 import PangImage from "../assets/ggompang.jpg";
 import queryString from "query-string";
+import { ResultData } from "../assets/data/resultdata";
 
 const Result = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const mbti = queryString.parse(location.search).mbti;
+  const [resultData, setResultData] = React.useState({})
+
+
+  React.useEffect(() => {
+    const result = ResultData.find((s) => s.best === mbti)
+    setResultData(result)
+  }, [mbti])
+
 
   return (
     <>
@@ -19,11 +28,11 @@ const Result = () => {
           <Title>결과 보기</Title>
           <LogoImage>
             <img
-              src={PangImage}
+              src={resultData.image}
               alt="옴팡사진"
               className="rounded-circle"
-              width={200}
-              height={200}
+              width={400}
+              height={400}
             />
           </LogoImage>
           <Desc
@@ -31,17 +40,13 @@ const Result = () => {
               fontSize: "18pt",
             }}
           >
-            나에게 맞는 고양이는 {mbti} 아비시니안 입니다.
+            예비집사님과 찰떡궁합인 고양이는 {resultData.best}형 고양이 '{resultData.name}' 입니다.
           </Desc>
           <Desc
             style={{
               marginTop: 10,
             }}
-          >
-            밝고 활달한 성격에 아비시니안은 이집트 출신의 고양이로 유명하죠.
-            귀찮게 하는 것을 싫어하지만,, 애교는 정말 많답니다. 애교는 정말
-            많답니다.애교는 정말 많답니다.애교는 정말 많답니다.애교는 정말
-            많답니다.애교는 정말 많답니다.애교는 정말 많답니다.
+          >{resultData.desc}
           </Desc>
           <ShareButtonGroup>
             <div className="addthis_inline_share_toolbox"></div>
