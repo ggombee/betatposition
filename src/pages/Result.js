@@ -20,6 +20,10 @@ const Result = () => {
   }, [mbti])
 
 
+  React.useEffect(() => {
+    // window.location.reload();
+  }, [mbti]);
+
   return (
     <>
       <Container>
@@ -49,7 +53,7 @@ const Result = () => {
           >{resultData.desc}
           </Desc>
           <ShareButtonGroup>
-            <div className="addthis_inline_share_toolbox"></div>
+            <div className="addthis_inline_share_toolbox" />
           </ShareButtonGroup>
           <Button
             onClick={() => navigate("/")}
