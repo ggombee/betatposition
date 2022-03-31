@@ -7,7 +7,7 @@ import Result from "./pages/Result";
 function App() {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/question" element={<Question />} />
       <Route path="/result" element={<Result />} />
     </Routes>
