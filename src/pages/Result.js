@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 // import { Button } from 'react-bootstrap';
 import { useNavigate, useLocation } from "react-router-dom";
-import PangImage from "../assets/ggompang.jpg";
+// import PangImage from "../assets/ggompang.jpg";
 import queryString from "query-string";
 import { ResultData } from "../assets/data/resultdata";
 
@@ -68,6 +68,7 @@ const Result = () => {
             테스트 다시하기
           </Button>
         </Wrapper>
+
       </Container>
     </>
   );

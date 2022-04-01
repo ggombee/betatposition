@@ -120,18 +120,8 @@ const Question = () => {
           </Button>
         </ButtonGroup>
       </Contents>
-      {/* <ins
-        class="kakao_ad_area"
-        style={{ display: "none" }}
-        data-ad-unit="DAN-u2JDmzz9RNn61qmk"
-        data-ad-width="320"
-        data-ad-height="100"
-      ></ins>
-      <script
-        type="text/javascript"
-        src="//t1.daumcdn.net/kas/static/ba.min.js"
-        async
-      ></script> */}
+      <div className="adfit" />
+
     </Container>
   );
 };
