@@ -37,6 +37,7 @@ const Home = () => {
               fontFamily: "SimKyungha",
               fontSize: 25,
               marginTop: 20,
+              marginBottom: 20,
             }}
           >
             테스트 시작하기
