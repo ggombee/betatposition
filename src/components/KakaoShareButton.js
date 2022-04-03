@@ -15,8 +15,8 @@ const KakaoShareButton = ({ data }) => {
     Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
-        title: data.name,
-        description: data.desc,
+        title: "😼예비집사 판별기 결과😼",
+        description: `예비 집사님이 고양이를 키운다면 가장 잘맞는 고양이는 ${data.name}이에요.`,
         imageUrl: url + data.image,
         link: {
           mobileWebUrl: resultUrl,
@@ -25,10 +25,10 @@ const KakaoShareButton = ({ data }) => {
       },
       buttons: [
         {
-          title: "결과확인하기",
+          title: "나도 테스트하러가기",
           link: {
-            mobileWebUrl: resultUrl,
-            webUrl: resultUrl,
+            mobileWebUrl: url,
+            webUrl: url,
           },
         },
       ],
