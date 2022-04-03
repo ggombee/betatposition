@@ -33,8 +33,8 @@ const Result = () => {
               src={resultData.image}
               alt="옴팡사진"
               className="rounded-circle"
-              width={400}
-              height={400}
+              width={350}
+              height={350}
             />
           </LogoImage>
           <Desc
@@ -64,7 +64,6 @@ const Result = () => {
                 fontFamily: "SimKyungha",
                 fontSize: 25,
                 marginTop: 20,
-                marginBottom: 20,
               }}
             >
               테스트 다시하기
@@ -84,7 +83,7 @@ const Result = () => {
                 fontSize: 25,
                 marginTop: 20,
                 marginLeft: 20,
-                marginBottom: 20,
+                color: "white",
               }}
             >
               카카오톡 공유하기
@@ -100,7 +99,7 @@ export default Result;
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   background: #fffacd;
   flex-direction: column;
@@ -108,7 +107,7 @@ const Container = styled.div`
 
 const Header = styled.div`
   color: white;
-  font-size: 40pt;
+  font-size: 35pt;
   font-family: "SimKyungha";
   height: 10vh;
   width: 100%;
@@ -119,6 +118,7 @@ const Header = styled.div`
 `;
 
 const Wrapper = styled.div`
+  margin-top: 70px;
   height: 80vh;
   width: 100%;
   display: flex;
