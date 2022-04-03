@@ -55,17 +55,39 @@ const Result = () => {
           <ShareButtonGroup>
             <div className="addthis_inline_share_toolbox" />
           </ShareButtonGroup>
-          <Button
-            onClick={() => navigate("/")}
-            className="btn-danger"
-            style={{
-              fontFamily: "SimKyungha",
-              fontSize: 25,
-              marginTop: 20,
-            }}
-          >
-            테스트 다시하기
-          </Button>
+          <div>
+            <Button
+              onClick={() => navigate("/")}
+              className="btn-danger"
+              style={{
+                width: 170,
+                fontFamily: "SimKyungha",
+                fontSize: 25,
+                marginTop: 20,
+              }}
+            >
+              테스트 다시하기
+            </Button>
+            <Button
+              onClick={() => navigate("/")}
+              // className="btn-primary"
+              // className="btn-secondary"
+              // className="btn-success"
+              className="btn-warning"
+              // className="btn-info"
+              // className="btn-light"
+              // className="btn-dark"
+              style={{
+                width: 170,
+                fontFamily: "SimKyungha",
+                fontSize: 25,
+                marginTop: 20,
+                marginLeft: 20,
+              }}
+            >
+              카카오톡 공유하기
+            </Button>
+          </div>
         </Wrapper>
 
       </Container>
