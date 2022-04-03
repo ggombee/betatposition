@@ -10,11 +10,13 @@ const KakaoShareButton = (data) => {
     Kakao.init("706b058dedece1187fba96396b9d2738");
   }, []);
 
+  console.log("sssss", data);
+
   const shareKakao = () => {
     Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
-        title: data.title,
+        title: data.name,
         description: data.desc,
         imageUrl: data.image,
         link: {
