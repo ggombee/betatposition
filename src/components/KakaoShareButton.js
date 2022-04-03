@@ -18,8 +18,8 @@ const KakaoShareButton = (data) => {
         description: data.desc,
         imageUrl: data.image,
         link: {
-          mobileWebUrl: "모바일 url!",
-          webUrl: "",
+          mobileWebUrl: url,
+          webUrl: url,
         },
       },
       buttons: [
@@ -27,7 +27,7 @@ const KakaoShareButton = (data) => {
           title: "결과확인하기",
           link: {
             mobileWebUrl: "공유할 url!",
-            webUrl: "",
+            webUrl: url,
           },
         },
       ],
@@ -36,7 +36,7 @@ const KakaoShareButton = (data) => {
 
   return (
     <Button
-      // onClick={() => shareKakao()}
+      onClick={shareKakao}
       // className="btn-primary"
       // className="btn-secondary"
       // className="btn-success"
