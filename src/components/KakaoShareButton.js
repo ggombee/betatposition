@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 const { Kakao } = window;
 
 const KakaoShareButton = ({ data }) => {
-  // const url = "https://betatestmbti.netlify.app/";
-  // const resultUrl = window.location.href;
+  const url = "https://betatestmbti.netlify.app/";
+  const resultUrl = window.location.href;
   console.log("sss", window.location.href);
 
   React.useEffect(() => {
@@ -15,20 +15,20 @@ const KakaoShareButton = ({ data }) => {
     Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
-        title: "data.name",
-        description: "data.desc",
-        imageUrl: " data.image",
+        title: data.name,
+        description: data.desc,
+        imageUrl: url + data.image,
         link: {
-          mobileWebUrl: "resultUrl",
-          webUrl: "resultUrl",
+          mobileWebUrl: resultUrl,
+          webUrl: resultUrl,
         },
       },
       buttons: [
         {
           title: "결과확인하기",
           link: {
-            mobileWebUrl: " resultUrl",
-            webUrl: " resultUrl",
+            mobileWebUrl: resultUrl,
+            webUrl: resultUrl,
           },
         },
       ],
