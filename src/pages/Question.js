@@ -70,7 +70,6 @@ const Question = () => {
   // }, [questionNo]);
 
   // const handleCLickAnswerA = (no) => {
-  //   console.log("zzzzzz", no);
 
   //   // setSelectedData(QuestionData[no + 1]);
   //   setQuestionNo(no + 1);
