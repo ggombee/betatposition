@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-// import { useNavigate, useLocation } from "react-router-dom";
 const { Kakao } = window;
 
 const KakaoShareButton = ({ data }) => {
   const url = "https://betatestmbti.netlify.app/";
-  // const shareUrl = url + 'src/assets/cat/'
+  const resultUrl = window.location.href;
+  console.log("sss", window.location.href);
+
   React.useEffect(() => {
     Kakao.init("706b058dedece1187fba96396b9d2738");
   }, []);
@@ -14,23 +15,20 @@ const KakaoShareButton = ({ data }) => {
     Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
-        title: "data.name",
-        description: " data.desc",
-        imageUrl: " data.image",
-        // title: data.name,
-        // description: data.desc,
-        // imageUrl: data.image,
+        title: data.name,
+        description: data.desc,
+        imageUrl: url + data.image,
         link: {
-          mobileWebUrl: url,
-          webUrl: url,
+          mobileWebUrl: resultUrl,
+          webUrl: resultUrl,
         },
       },
       buttons: [
         {
           title: "결과확인하기",
           link: {
-            mobileWebUrl: url,
-            webUrl: url,
+            mobileWebUrl: resultUrl,
+            webUrl: resultUrl,
           },
         },
       ],
