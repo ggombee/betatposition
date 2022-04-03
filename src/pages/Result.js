@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 // import PangImage from "../assets/ggompang.jpg";
 import queryString from "query-string";
 import { ResultData } from "../assets/data/resultdata";
+import KakaoShare from "../components/share";
 
 const Result = () => {
   const navigate = useNavigate();
@@ -68,8 +69,9 @@ const Result = () => {
             >
               테스트 다시하기
             </Button>
+            {/* <KakaoShare /> */}
             <Button
-              onClick={() => navigate("/")}
+              // onClick={() => shareKakao()}
               // className="btn-primary"
               // className="btn-secondary"
               // className="btn-success"
@@ -88,6 +90,7 @@ const Result = () => {
             >
               카카오톡 공유하기
             </Button>
+            <KakaoShare />
           </div>
         </Wrapper>
       </Container>
