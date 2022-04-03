@@ -28,7 +28,7 @@ const KakaoShareButton = (data) => {
         {
           title: "결과확인하기",
           link: {
-            mobileWebUrl: "공유할 url!",
+            mobileWebUrl: url,
             webUrl: url,
           },
         },
