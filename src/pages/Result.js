@@ -152,10 +152,10 @@ const Desc = styled.div`
   text-align: center;
 `;
 
-const ShareButtonGroup = styled.div`
-  margin-top: 20px;
-  display: flex;
-  // flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+// const ShareButtonGroup = styled.div`
+//   margin-top: 20px;
+//   display: flex;
+//   // flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// `;

@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import { useNavigate, useLocation } from "react-router-dom";
+// import Button from "react-bootstrap/Button";
+// import { useNavigate, useLocation } from "react-router-dom";
 const { Kakao } = window;
 
 const KakaoShare = () => {
