@@ -3,14 +3,14 @@ import Button from "react-bootstrap/Button";
 // import { useNavigate, useLocation } from "react-router-dom";
 const { Kakao } = window;
 
-const KakaoShareButton = (data) => {
+const KakaoShareButton = ({ data }) => {
   const url = "https://betatestmbti.netlify.app/";
   // const shareUrl = url + 'src/assets/cat/'
   React.useEffect(() => {
     Kakao.init("706b058dedece1187fba96396b9d2738");
   }, []);
 
-  console.log("sssss", data);
+  console.log("sssss", data.name);
 
   const shareKakao = () => {
     Kakao.Link.sendDefault({

@@ -2,16 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 // import { Button } from 'react-bootstrap';
-import { useNavigate, useLocation } from "react-router-dom";
-// import PangImage from "../assets/ggompang.jpg";
-import queryString from "query-string";
+import { useNavigate, useSearchParams } from "react-router-dom";
+// import queryString from "query-string";
 import { ResultData } from "../assets/data/resultdata";
 import KakaoShareButton from "../components/KakaoShareButton";
 
 const Result = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const mbti = queryString.parse(location.search).mbti;
+  // const location = useLocation();
+  const [searchParams] = useSearchParams();
+  // const mbti = queryString.parse(location.search).mbti;
+  const mbti = searchParams.get("mbti");
   const [resultData, setResultData] = React.useState({});
 
   React.useEffect(() => {

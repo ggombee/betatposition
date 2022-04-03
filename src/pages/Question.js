@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ProgressBar, Button } from "react-bootstrap";
 import { QuestionData } from "../assets/data/questiondata";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const Question = () => {
   // const [selectedData, setSelectedData] = React.useState({});
@@ -30,7 +30,12 @@ const Question = () => {
           (curr.score >= 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
         ""
       );
-      navigate(`/result?mbti=${mbti}`);
+      navigate({
+        pathname: "/result",
+        search: `?${createSearchParams({
+          mbti: mbti,
+        })}`,
+      });
     }
 
     // if (type === "EI") {
@@ -121,7 +126,6 @@ const Question = () => {
         </ButtonGroup>
       </Contents>
       <div className="adfit" />
-
     </Container>
   );
 };
