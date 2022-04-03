@@ -5,7 +5,6 @@ const { Kakao } = window;
 const KakaoShareButton = ({ data }) => {
   const url = "https://betatestmbti.netlify.app/";
   const resultUrl = window.location.href;
-  console.log("sss", window.location.href);
 
   React.useEffect(() => {
     Kakao.init("706b058dedece1187fba96396b9d2738");
