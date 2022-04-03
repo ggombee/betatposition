@@ -11,14 +11,12 @@ const Result = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const mbti = queryString.parse(location.search).mbti;
-  const [resultData, setResultData] = React.useState({})
-
+  const [resultData, setResultData] = React.useState({});
 
   React.useEffect(() => {
-    const result = ResultData.find((s) => s.best === mbti)
-    setResultData(result)
-  }, [mbti])
-
+    const result = ResultData.find((s) => s.best === mbti);
+    setResultData(result);
+  }, [mbti]);
 
   React.useEffect(() => {
     // window.location.reload();
@@ -44,13 +42,15 @@ const Result = () => {
               fontSize: "18pt",
             }}
           >
-            예비집사님과 찰떡궁합인 고양이는 {resultData.best}형 고양이 '{resultData.name}' 입니다.
+            예비집사님과 찰떡궁합인 고양이는 {resultData.best}형 고양이 '
+            {resultData.name}' 입니다.
           </Desc>
           <Desc
             style={{
               marginTop: 10,
             }}
-          >{resultData.desc}
+          >
+            {resultData.desc}
           </Desc>
           <ShareButtonGroup>
             <div className="addthis_inline_share_toolbox" />
