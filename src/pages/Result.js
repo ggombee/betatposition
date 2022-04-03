@@ -52,9 +52,9 @@ const Result = () => {
           >
             {resultData.desc}
           </Desc>
-          <ShareButtonGroup>
+          {/* <ShareButtonGroup>
             <div className="addthis_inline_share_toolbox" />
-          </ShareButtonGroup>
+          </ShareButtonGroup> */}
           <div>
             <Button
               onClick={() => navigate("/")}
@@ -64,6 +64,7 @@ const Result = () => {
                 fontFamily: "SimKyungha",
                 fontSize: 25,
                 marginTop: 20,
+                marginBottom: 20,
               }}
             >
               테스트 다시하기
@@ -83,13 +84,13 @@ const Result = () => {
                 fontSize: 25,
                 marginTop: 20,
                 marginLeft: 20,
+                marginBottom: 20,
               }}
             >
               카카오톡 공유하기
             </Button>
           </div>
         </Wrapper>
-
       </Container>
     </>
   );
