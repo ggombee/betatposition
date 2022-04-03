@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 // import PangImage from "../assets/ggompang.jpg";
 import queryString from "query-string";
 import { ResultData } from "../assets/data/resultdata";
-import KakaoShare from "../components/share";
+import KakaoShareButton from "../components/KakaoShareButton";
 
 const Result = () => {
   const navigate = useNavigate();
@@ -19,9 +19,9 @@ const Result = () => {
     setResultData(result);
   }, [mbti]);
 
-  React.useEffect(() => {
-    // window.location.reload();
-  }, [mbti]);
+  // React.useEffect(() => {
+  //   // window.location.reload();
+  // }, [mbti]);
 
   return (
     <>
@@ -69,28 +69,7 @@ const Result = () => {
             >
               테스트 다시하기
             </Button>
-            {/* <KakaoShare /> */}
-            <Button
-              // onClick={() => shareKakao()}
-              // className="btn-primary"
-              // className="btn-secondary"
-              // className="btn-success"
-              className="btn-warning"
-              // className="btn-info"
-              // className="btn-light"
-              // className="btn-dark"
-              style={{
-                width: 170,
-                fontFamily: "SimKyungha",
-                fontSize: 25,
-                marginTop: 20,
-                marginLeft: 20,
-                color: "white",
-              }}
-            >
-              카카오톡 공유하기
-            </Button>
-            <KakaoShare />
+            <KakaoShareButton data={resultData} />
           </div>
         </Wrapper>
       </Container>
