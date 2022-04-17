@@ -16,7 +16,8 @@ const Question = () => {
     { id: "JP", score: 0 },
   ]);
 
-  const handleCLickAnswer = (add, type) => {
+
+  const handleClickAnswer = (add, type) => {
     const newScore = totalScore.map((s) =>
       s.id === type ? { id: s.id, score: s.score + add } : s
     );
@@ -103,7 +104,7 @@ const Question = () => {
         <ButtonGroup>
           <Button
             variant="warning"
-            onClick={() => handleCLickAnswer(1, QuestionData[questionNo].type)}
+            onClick={() => handleClickAnswer(1, QuestionData[questionNo].type)}
             style={{ width: "40%", minHeight: "200px", fontSize: "15pt" }}
           >
             {QuestionData[questionNo].answera}
@@ -111,7 +112,7 @@ const Question = () => {
           </Button>
           <Button
             variant="warning"
-            onClick={() => handleCLickAnswer(0, QuestionData[questionNo].type)}
+            onClick={() => handleClickAnswer(0, QuestionData[questionNo].type)}
             style={{
               width: "40%",
               marginLeft: "20px",

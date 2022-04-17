@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 // import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-import PangImage from "../assets/ggompang.jpg";
+import PangImage from "../assets/ggompang.jpeg";
 
 const Home = () => {
   const navigate = useNavigate();
